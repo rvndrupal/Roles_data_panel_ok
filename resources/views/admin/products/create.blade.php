@@ -11,7 +11,7 @@
       </ol>
 
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12 ">
             <div class="panel panel-default">
                 <div class="panel-heading">
                    Nuevo Producto
@@ -32,3 +32,16 @@
     </div>
 
 @endsection 
+
+@section('scripts')
+<script>
+        $(function () {
+          // Replace the <textarea id="editor1"> with a CKEditor
+          // instance, using default configuration.
+          CKEDITOR.replace('editor1')
+          //bootstrap WYSIHTML5 - text editor
+          $('.textarea').wysihtml5()
+        })
+      </script>
+
+@endsection

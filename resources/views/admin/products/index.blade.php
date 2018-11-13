@@ -29,6 +29,7 @@
           <th>ID</th>
           <th>NOMBRE</th>
           <th>DESCRIPCIÓN</th>
+          <th>PUBLICACIÓN</th>
           <th>ACCIONES</th>
          
         </tr>
@@ -39,6 +40,7 @@
                     <td>{{ $producto->id }}</td>
                     <td>{{ $producto->name }}</td>
                     <td>{{ $producto->description }}</td>
+                    <td>{{ $producto->created_at }}</td>
                     <td width="150px">
                         @can('products.show')
                         <a href="{{ route('products.show', $producto->id) }}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i></a>
