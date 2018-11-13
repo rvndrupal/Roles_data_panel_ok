@@ -8,7 +8,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{ route('products.index') }}"><i class="fa fa-dashboard"></i> Listado de Productos</a></li>
-        <li class="active">Producto  ID-> {{ $product->id }}</li>
+        <li class="active">Producto  ID-> {{ $product->url }}</li>
       </ol>
 
     <div class="row">
@@ -20,7 +20,7 @@
 
                 <div class="panel-body">
                 
-                {!! Form::model($product, ['route'=> ['products.update', $product->id],
+                {!! Form::model($product, ['route'=> ['products.update', $product->url],
                  'method'=>'PUT']) !!}
 
                 @include('admin.products.partials.form')
@@ -34,3 +34,17 @@
     </div>
 
 @endsection 
+
+
+@section('scripts')
+<script>
+        $(function () {
+          // Replace the <textarea id="editor1"> with a CKEditor
+          // instance, using default configuration.
+          CKEDITOR.replace('editor1')
+          //bootstrap WYSIHTML5 - text editor
+          $('.textarea').wysihtml5()
+        })
+      </script>
+
+@endsection

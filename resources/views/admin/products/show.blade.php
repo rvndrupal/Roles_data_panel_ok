@@ -22,7 +22,7 @@
 
                 <div class="panel-body">
                 <p> <strong>Nombre</strong> {{ $product->name }}</p>
-                <p> <strong>Descripción</strong> {{ $product->description }}</p>
+                <p> <strong>Descripción</strong> {!! $product->description !!}</p>
                 </div>
             </div>
         </div>

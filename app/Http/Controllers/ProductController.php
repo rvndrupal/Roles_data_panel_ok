@@ -37,7 +37,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product=Product::create($request->all());
+
+        $this->validate($request,[
+            'name'=>'required',
+            'description'=>'required',
+            'created_at'=>'required'
+        ]);
+
+
+
+        // $product=Product::create($request->all());
+        // $product->url=str_slug($request-get('name'));
+
+        $product=Product::create([
+            'name' => $request['name'],
+            'description' => $request['description'],
+            'url' =>str_slug($request['name']),
+        ]);
         
         return redirect()->route('products.index')
         ->with('info','Producto guardado con exito');

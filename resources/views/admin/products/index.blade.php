@@ -39,19 +39,19 @@
             <tr>
                     <td>{{ $producto->id }}</td>
                     <td>{{ $producto->name }}</td>
-                    <td>{{ $producto->description }}</td>
+                    <td>{!! $producto->description !!}</td>
                     <td>{{ $producto->created_at }}</td>
                     <td width="150px">
                         @can('products.show')
-                        <a href="{{ route('products.show', $producto->id) }}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('products.show', $producto->url) }}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i></a>
                         @endcan  
                         @can('products.edit')
-                        <a href="{{ route('products.edit', $producto->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                        <a href="{{ route('products.edit', $producto->url) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
                          @endcan
 
                          @can('products.destroy')
                                     
-                         {!! Form::open(['route'=>['products.destroy', $producto->id],
+                         {!! Form::open(['route'=>['products.destroy', $producto->url],
                          'method'=>'DELETE']) !!}
                          <button class="btn btn-xs btn-danger" style="margin: -22px 0 0 51px; position:absolute"><i class="fa fa-times"></i></button>
                          

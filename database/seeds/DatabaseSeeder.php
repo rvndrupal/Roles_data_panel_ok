@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
 
-        factory(App\Product::class, 30)->create();
+        factory(App\Product::class, 10)->create();
         factory(App\User::class, 3)->create();
 
         Role::create([

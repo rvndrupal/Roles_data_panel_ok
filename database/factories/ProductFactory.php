@@ -3,8 +3,10 @@
 use Faker\Generator as Faker;
 
 $factory->define(App\Product::class, function (Faker $faker) {
+    $name=$faker->sentence;
     return [
-        'name'=> $faker->sentence,
+        'name'=> $name,
+        'url'=>str_slug($name,'-'),
         'description'=> $faker->sentence,
     ];
 });
